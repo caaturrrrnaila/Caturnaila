@@ -32,14 +32,13 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: hamba
+ - name: hamba
     server: quiz.int.vidio.com
     port: 443
     type: vless
     uuid: c480ef2a-97d6-40d9-a44f-45881bf136b1
-    alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
     servername: client.candrassh2.my.id
     network: ws
@@ -47,6 +46,10 @@ proxies:
       path: /vless
       headers:
         Host: client.candrassh2.my.id
+    udp: true
+proxy-groups:
+  - name: FASTSSH-SSHKIT-HOWDY
+    type: select
     udp: true
   - name: AKUN2
     server: quiz.int.vidio.com
@@ -85,7 +88,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - hamba
+      - AKUN1
       - AKUN2
       - AKUN3
 
